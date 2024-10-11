@@ -2,10 +2,15 @@ import Hero from "@/components/sections/hero";
 import TextWithAction from "@/components/sections/text-with-action";
 import InfoCard from "@/components/ui/info-card";
 import SectionTitle from "@/components/ui/section-title";
+import dynamic from "next/dynamic";
+
+const ContactForm = dynamic(() => import("@/components/common/contact-form"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <div className="pb-[200px]">
+    <div className="pb-[100px]">
       <Hero />
       <TextWithAction
         title="Exciting Business
@@ -36,6 +41,21 @@ Lending Opportunities Await"
           description="More similar in spirit to a company credit card than a small-business loan, a business line of credit provides flexibility in a company’s budget to meet unexpected expenses that may arise. This allows the small business owner to focus on growing their business without worrying about any bumps in the road towards expansion."
           imgSrc="https://utfs.io/f/O28eV6fH0F3paKbwvqohJNg5PstRH3mQ4FIwKpr87Mx6zdnB"
         />
+      </div>
+
+      <div className="mt-[100px] sectionContainer">
+        <div className="max-w-[520px] mx-auto">
+          <h1 className="text-[30px] md:text-[45px] font-nunito font-semibold text-primary-main text-center ">
+            APPLY NOW & GET APPROVED IN 24 HOURS
+          </h1>
+          <p className="max-w-[380px] mx-auto text-[17px] text-primary-gray text-center">
+            Fill out our application now to get approved today!
+          </p>
+        </div>
+
+        <div className=" w-full mt-[50px] md:mt-[100px] bg-gray-300 p-3 md:p-[20px]">
+          <ContactForm />
+        </div>
       </div>
     </div>
   );
