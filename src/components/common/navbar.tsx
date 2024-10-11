@@ -1,5 +1,6 @@
 import { navLinks } from "@/data";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import ApplyButton from "../ui/applyButton";
 import { Button } from "../ui/button";
@@ -9,7 +10,9 @@ const Navbar = () => {
   return (
     <section className="h-[80px]  border-b">
       <div className="flex items-center w-full md:max-w-[1021px] justify-between h-full sectionContainer">
-        <h1>LOGO</h1>
+        <Link href="/">
+          <Image src="/logo.webp" width={80} height={80} alt="logo" />
+        </Link>
         <div className="flex-1 h-full md:flex justify-end items-center gap-x-28 hidden">
           {navLinks.map(({ id, name, href }) => (
             <Link
