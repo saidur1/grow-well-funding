@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -75,4 +71,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
+  .sectionContainer {
+    @apply max-w-[1021px] mx-auto px-4 md:px-8;
+  }
+}
+
+.clipPathPolygon {
+  clip-path: polygon(17% 0, 100% 0, 84% 100%, 3% 100%);
 }

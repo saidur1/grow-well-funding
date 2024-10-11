@@ -1,101 +1,42 @@
-import Image from "next/image";
+import Hero from "@/components/sections/hero";
+import TextWithAction from "@/components/sections/text-with-action";
+import InfoCard from "@/components/ui/info-card";
+import SectionTitle from "@/components/ui/section-title";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="pb-[200px]">
+      <Hero />
+      <TextWithAction
+        title="Exciting Business
+Lending Opportunities Await"
+        titleClasses="font-bold font-nunito"
+        center
+        actionButton
+        para1="Taking that next step for your small business or real estate venture requires capital. For all those vital growth opportunities, Growwell Funding can lend years of experience in addition to the funds necessary to get you going."
+        para2="Here at Growwell, we pride ourselves on providing service that is efficient, transparent, and comprehensive. Our team of experts works for you to rapidly approve your application and connect you to the financial boost you need for your next chapter. Work with us today for the opportunity to make your business simpler, more efficient, and ultimately more profitable."
+      />
+      <SectionTitle
+        title=" Growwell Funding Services"
+        description="With a network of capital to tap into as well as rapid forward progress
+        for your loan, applying for the money you need is as simple as applying.
+        Here are the top three money-lending services you can expect from
+        Growell Funding:"
+      />
+      <div className="mt-[50px] space-y-10">
+        <InfoCard
+          side="left"
+          title="Equipment Financing"
+          description="These small-business loans can help growing companies cover the cost of machinery vital to their operation, ranging in scope from office furniture to medical equipment to restaurant equipment to agricultural tools. Financing your necessary business machinery not only takes the strain off of the initial purchase, but also helps businesses operating at their peak while allowing them to expand with increased volumes of customers."
+          imgSrc="https://utfs.io/f/O28eV6fH0F3pE2kikmdB7QeWmo3JK4Lrxh1ZbIYMXBN6Ea08"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <InfoCard
+          side="right"
+          title="Business Lines of Credit"
+          description="More similar in spirit to a company credit card than a small-business loan, a business line of credit provides flexibility in a company’s budget to meet unexpected expenses that may arise. This allows the small business owner to focus on growing their business without worrying about any bumps in the road towards expansion."
+          imgSrc="https://utfs.io/f/O28eV6fH0F3paKbwvqohJNg5PstRH3mQ4FIwKpr87Mx6zdnB"
+        />
+      </div>
     </div>
   );
 }
