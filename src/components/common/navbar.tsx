@@ -36,7 +36,7 @@ const Navbar = () => {
                   {name}
                 </Link>
               </HoverCardTrigger>
-              <HoverCardContent className="space-y-2">
+              <HoverCardContent className="space-y-2 flex flex-col">
                 {subLinks?.map(({ href, id, name }) => (
                   <Link
                     key={id}

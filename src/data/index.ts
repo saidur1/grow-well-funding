@@ -17,12 +17,12 @@ export const navLinks = [
       {
         id: crypto.randomUUID(),
         name: "Equipment-Financing",
-        href: "/",
+        href: "/equipment-financing",
       },
       {
         id: crypto.randomUUID(),
         name: "Business Line of Credit",
-        href: "/",
+        href: "/business-line-of-credit",
       },
     ],
   },
