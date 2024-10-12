@@ -37,6 +37,7 @@ const Navbar = () => {
               <HoverCardContent className="space-y-2">
                 {subLinks?.map(({ href, id, name }) => (
                   <Link
+                    key={id}
                     href={href}
                     className="text-primary-main hover:text-primary-main/80 transition duration-200"
                   >
