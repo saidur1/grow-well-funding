@@ -25,7 +25,7 @@ const About = () => {
         para1="Offering services to business owners nationwide, Growwell Funding is on-hand to help you unlock the potential of your business. We provide fast and simple loans, which have changed the game regarding business financing. "
         para2="Unlike traditional banks, we can provide funding in a flash, helping you move and focus on your business. Our experienced team has the know-how and the network to ensure capital can be provided quickly across various opportunities."
       />
-      <div className="mt-[100px]">
+      <div className="mt-[100px] mb-[50px]">
         <Services />
       </div>
     </>

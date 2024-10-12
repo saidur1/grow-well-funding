@@ -20,7 +20,7 @@ import {
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <section className="h-[80px]  border-b max-w-[1000px] mx-auto">
+    <section className="h-[80px]  bg-white  border-b max-w-[1000px] mx-auto px-4 md:px-8">
       <div className="flex items-center w-full justify-between h-full ">
         <div className="flex-initial w-[200px]">
           <Link href="/">
