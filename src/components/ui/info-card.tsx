@@ -9,6 +9,8 @@ interface Props {
   imgSrc: string;
   titleClasses?: string;
   applyButton?: boolean;
+  para2?: string;
+  para3?: string;
 }
 
 const InfoCard = ({
@@ -18,6 +20,8 @@ const InfoCard = ({
   imgSrc,
   titleClasses,
   applyButton,
+  para2,
+  para3,
 }: Props) => {
   return (
     <section className="sectionContainer">
@@ -40,7 +44,15 @@ const InfoCard = ({
           <h1 className={cn("text-primary-main text-[26px]", titleClasses)}>
             {title}
           </h1>
-          <p className="text-[17px] text-primary-gray mt-4">{description}</p>
+          {description && (
+            <p className="text-[17px] text-primary-gray mt-4">{description}</p>
+          )}
+          {para2 && (
+            <p className="text-[17px] text-primary-gray mt-4">{para2}</p>
+          )}
+          {para3 && (
+            <p className="text-[17px] text-primary-gray mt-4">{para3}</p>
+          )}
           {applyButton && (
             <div className="mt-3">
               <ApplyButton />

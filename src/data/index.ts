@@ -50,7 +50,7 @@ export const servicesLists = [
   },
 ];
 
-export const faqs = [
+export const faqsForBusinessFinancing = [
   {
     id: crypto.randomUUID(),
     ques: "What Is Equipment Financing?",

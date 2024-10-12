@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import InfoCard from "@/components/ui/info-card";
 import SectionTitle from "@/components/ui/section-title";
-import { faqs } from "@/data";
+import { faqsForBusinessFinancing } from "@/data";
 
 const Page = () => {
   return (
@@ -38,7 +38,8 @@ const Page = () => {
             side="right"
             title="How Equipment Financing Loans Work?"
             titleClasses="font-nunito font-semibold text-[35px] "
-            description="Much like a traditional loan, small businesses who finance their vital machinery must make periodic payments composed of interest and principal over a fixed period of time. Should a loan applicant fail to repay their loan in full, the lender is subject to repossess business or even personal assets, depending upon the agreed-upon terms.Equipment financing is distinct from equipment leasing, in which a business owner pays a rental fee for equipment over a predetermined term."
+            description="Much like a traditional loan, small businesses who finance their vital machinery must make periodic payments composed of interest and principal over a fixed period of time. Should a loan applicant fail to repay their loan in full, the lender is subject to repossess business or even personal assets, depending upon the agreed-upon terms."
+            para2="Equipment financing is distinct from equipment leasing, in which a business owner pays a rental fee for equipment over a predetermined term."
             imgSrc="https://utfs.io/f/O28eV6fH0F3pE2kikmdB7QeWmo3JK4Lrxh1ZbIYMXBN6Ea08"
           />
         </div>
@@ -51,7 +52,7 @@ const Page = () => {
             center
           />
           <Accordion type="single" collapsible>
-            {faqs.map(({ desc, id, ques }) => (
+            {faqsForBusinessFinancing.map(({ desc, id, ques }) => (
               <AccordionItem value={`item-${id}`} key={id}>
                 <AccordionTrigger className="text-[18px] md:text-[20px] font-nunito font-medium hover:no-underline text-left">
                   {ques}
