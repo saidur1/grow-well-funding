@@ -1,6 +1,7 @@
 import Footer from "@/components/common/footer";
 import Navbar from "@/components/common/navbar";
 import { cn } from "@/lib/utils";
+import NProgress from "@/provider/NProgress";
 import type { Metadata } from "next";
 import { Nunito, Questrial } from "next/font/google";
 import "./globals.css";
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(questrial.className, "antialiased")}>
+        <NProgress />
         <Navbar />
         {children}
         <Footer />
