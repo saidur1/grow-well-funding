@@ -11,7 +11,7 @@ const Footer = () => {
             About Us
           </h1>
           <div>
-            <p className="text-[14px] text-white">
+            <p className="text-[14px] text-white/80">
               Here at Growwell, we pride ourselves on providing service that is
               efficient, transparent, and comprehensive. Our team of experts
               works for you to rapidly approve your application and connect you
@@ -29,7 +29,7 @@ const Footer = () => {
             {navLinks.map(({ href, id, name }) => (
               <Link
                 key={id}
-                className="text-white/60 hover:text-white transition duration-300"
+                className="text-white/80 hover:text-white transition duration-300"
                 href={href}
               >
                 {name}
@@ -41,7 +41,7 @@ const Footer = () => {
           <h1 className="text-white text-[20px] font-nunito font-semibold">
             Contact Info
           </h1>
-          <div className="text-white/60 space-y-2">
+          <div className="text-white/80 space-y-2">
             <h4>Email: info@growwellfunding.com</h4>
             <h4>Phone: 845-307-4189</h4>
             <h4>Fax: 800-816-5191</h4>
@@ -53,10 +53,10 @@ const Footer = () => {
           </h1>
           <div className=" flex items-center gap-x-3">
             <a href="#">
-              <Instagram className="text-white/60 hover:text-white transition-colors duration-300" />
+              <Instagram className="text-white/80 hover:text-white transition-colors duration-300" />
             </a>
             <a href="#">
-              <Linkedin className="text-white/60 hover:text-white transition-colors duration-300" />
+              <Linkedin className="text-white/80 hover:text-white transition-colors duration-300" />
             </a>
           </div>
         </div>

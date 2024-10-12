@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 import {
   HoverCard,
   HoverCardContent,
@@ -17,6 +18,7 @@ import {
 } from "../ui/hover-card";
 
 const Navbar = () => {
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <section className="h-[80px]  border-b">
       <div className="flex items-center w-full md:max-w-[1021px] justify-between h-full sectionContainer">
@@ -52,7 +54,7 @@ const Navbar = () => {
           </Button>
         </div>
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" className="p-1">
                 <Menu className="text-primary-main" />
@@ -65,6 +67,7 @@ const Navbar = () => {
                     <HoverCardTrigger>
                       <Link
                         href={href}
+                        onClick={() => setOpen(false)}
                         className={cn(
                           "text-primary-main hover:text-primary-main/80 transition duration-200",
                           href === "" && "select-none"
@@ -78,6 +81,7 @@ const Navbar = () => {
                         <Link
                           key={id}
                           href={href}
+                          onClick={() => setOpen(false)}
                           className="text-primary-main hover:text-primary-main/80 transition duration-200"
                         >
                           {name}
