@@ -5,11 +5,25 @@ interface Props {
   description: string;
   center?: boolean;
   titleClasses?: string;
+  descriptionClasses?: string;
+  containerClasses?: string;
 }
 
-const SectionTitle = ({ title, description, center, titleClasses }: Props) => {
+const SectionTitle = ({
+  title,
+  description,
+  center,
+  titleClasses,
+  descriptionClasses,
+  containerClasses,
+}: Props) => {
   return (
-    <div className="my-[50px] mt-[100px] sectionContainer space-y-2">
+    <div
+      className={cn(
+        "my-[50px] mt-[100px] sectionContainer space-y-2",
+        containerClasses
+      )}
+    >
       <h1
         className={cn(
           "text-primary-main text-[45px]",
@@ -22,7 +36,8 @@ const SectionTitle = ({ title, description, center, titleClasses }: Props) => {
       <p
         className={cn(
           center ? "text-center mx-auto" : "text-start",
-          "max-w-[721px] "
+          "max-w-[721px] ",
+          descriptionClasses
         )}
       >
         {description}

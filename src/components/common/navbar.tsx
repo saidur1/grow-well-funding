@@ -20,12 +20,14 @@ import {
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <section className="h-[80px]  border-b">
-      <div className="flex items-center w-full md:max-w-[1021px] justify-between h-full sectionContainer">
-        <Link href="/">
-          <Image src="/logo.webp" width={80} height={80} alt="logo" />
-        </Link>
-        <div className="flex-1 h-full md:flex justify-end items-center gap-x-28 hidden">
+    <section className="h-[80px]  border-b max-w-[1000px] mx-auto">
+      <div className="flex items-center w-full justify-between h-full ">
+        <div className="flex-initial w-[200px]">
+          <Link href="/">
+            <Image src="/logo.webp" width={80} height={80} alt="logo" />
+          </Link>
+        </div>
+        <div className="flex-1 h-full   md:flex justify-around items-center hidden">
           {navLinks.map(({ id, name, href, subLinks }) => (
             <HoverCard key={id} open={href !== "" ? false : undefined}>
               <HoverCardTrigger>

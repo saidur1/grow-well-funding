@@ -7,9 +7,18 @@ interface Props {
   title: string;
   description: string;
   imgSrc: string;
+  titleClasses?: string;
+  applyButton?: boolean;
 }
 
-const InfoCard = ({ side, title, description, imgSrc }: Props) => {
+const InfoCard = ({
+  side,
+  title,
+  description,
+  imgSrc,
+  titleClasses,
+  applyButton,
+}: Props) => {
   return (
     <section className="sectionContainer">
       <div
@@ -28,11 +37,15 @@ const InfoCard = ({ side, title, description, imgSrc }: Props) => {
           />
         </div>
         <div className="flex-1">
-          <h1 className="text-primary-main text-[26px]">{title}</h1>
+          <h1 className={cn("text-primary-main text-[26px]", titleClasses)}>
+            {title}
+          </h1>
           <p className="text-[17px] text-primary-gray mt-4">{description}</p>
-          <div className="mt-3">
-            <ApplyButton />
-          </div>
+          {applyButton && (
+            <div className="mt-3">
+              <ApplyButton />
+            </div>
+          )}
         </div>
       </div>
     </section>

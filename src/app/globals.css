@@ -75,9 +75,6 @@
   .sectionContainer {
     @apply max-w-[1021px] mx-auto px-4 md:px-8;
   }
-  .commonMargin {
-    @apply mx-4 md:mx-8;
-  }
 }
 
 .clipPathPolygon {
