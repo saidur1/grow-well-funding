@@ -1,4 +1,5 @@
 "use client";
+import { useToast } from "@/hooks/use-toast";
 import { contactSchema, ContactSchemaType } from "@/schema/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -22,13 +23,27 @@ import {
 import { Separator } from "../ui/separator";
 
 const ContactForm = () => {
+  const { toast } = useToast();
   const form = useForm<ContactSchemaType>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      businessName: "",
+      loanType: "",
+      requestedLoan: "",
+    },
   });
 
   const handleForm = (data: ContactSchemaType) => {
-    console.log(data);
+    toast({
+      title: "Your application is submitted successfully",
+    });
+    form.reset(); // This will now work properly
   };
+
   return (
     <div className="bg-white shadow-lg">
       <h1 className="px-8 py-4 text-[26px] font-medium font-nunito">
@@ -47,7 +62,7 @@ const ContactForm = () => {
               render={({ field }) => (
                 <FormItem className="col-span-2 md:col-span-1">
                   <FormLabel>First Name *</FormLabel>
-                  <Input {...field} />
+                  <Input {...field} /> {/* Spread the entire field object */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -105,6 +120,7 @@ const ContactForm = () => {
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
+                    value={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>

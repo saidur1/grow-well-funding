@@ -9,9 +9,7 @@ export const contactSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
   businessName: z.string().min(1, { message: "Business name is required" }),
   loanType: z.string().min(1, { message: "Loan type is required" }),
-  requestedLoan: z
-    .number()
-    .positive({ message: "Requested loan must be a positive number" }),
+  requestedLoan: z.string(),
 });
 
 export type ContactSchemaType = z.infer<typeof contactSchema>;
