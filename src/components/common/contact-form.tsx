@@ -38,6 +38,7 @@ const ContactForm = () => {
   });
 
   const handleForm = (data: ContactSchemaType) => {
+    console.log(data);
     toast({
       title: "Your application is submitted successfully",
     });
