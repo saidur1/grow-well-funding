@@ -1,4 +1,3 @@
-import { navLinks } from "@/data";
 import { Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 
@@ -26,15 +25,24 @@ const Footer = () => {
             Quick Links
           </h1>
           <div className="flex flex-col gap-y-3">
-            {navLinks.map(({ href, id, name }) => (
-              <Link
-                key={id}
-                className="text-white/80 hover:text-white transition duration-300"
-                href={href}
-              >
-                {name}
-              </Link>
-            ))}
+            <Link
+              className="text-white/80 hover:text-white transition duration-300"
+              href="/"
+            >
+              Home
+            </Link>
+            <Link
+              className="text-white/80 hover:text-white transition duration-300"
+              href="/about"
+            >
+              About
+            </Link>
+            <Link
+              className="text-white/80 hover:text-white transition duration-300"
+              href="/contact"
+            >
+              Contact
+            </Link>
           </div>
         </div>
         <div className="mx-auto space-y-3">

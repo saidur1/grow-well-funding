@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <div
-      className=" relative h-[80vh] bg-no-repeat bg-cover  bg-fixed bg-gray-100"
+      className=" relative h-[80vh] bg-no-repeat bg-cover  bg-fixed bg-gray-200"
       style={{
         backgroundImage:
           "url(https://utfs.io/f/0CpqaBXnsrLBE359wKhS2lMG9RtWfUEc4LAKZIy6NokaYnwX)",
