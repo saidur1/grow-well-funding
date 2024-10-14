@@ -1,7 +1,11 @@
 import { Button } from "./button";
 
 const ApplyButton = () => {
-  return <Button>Apply Now</Button>;
+  return (
+    <a href="/#apply">
+      <Button>Apply Now</Button>
+    </a>
+  );
 };
 
 export default ApplyButton;

@@ -51,9 +51,11 @@ const Navbar = () => {
               </HoverCardContent>
             </HoverCard>
           ))}
-          <Button className="h-[40px] rounded-none bg-primary-main border-[1px] border-primary-main hover:bg-transparent hover:text-primary-main transition duration-300">
-            Apply Now
-          </Button>
+          <a href="/#apply">
+            <Button className="h-[40px] rounded-none bg-primary-main border-[1px] border-primary-main hover:bg-transparent hover:text-primary-main transition duration-300">
+              Apply Now
+            </Button>
+          </a>
         </div>
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>

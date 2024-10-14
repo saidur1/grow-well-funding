@@ -43,7 +43,7 @@ Lending Opportunities Await"
         />
       </div>
 
-      <div className="mt-[100px] sectionContainer">
+      <div className="mt-[100px] sectionContainer" id="apply">
         <div className="max-w-[520px] mx-auto">
           <h1 className="text-[30px] md:text-[45px] font-nunito font-semibold text-primary-main text-center ">
             APPLY NOW & GET APPROVED IN 24 HOURS
