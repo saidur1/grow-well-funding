@@ -112,7 +112,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const MobileNavbar = ({ modalControl }) => {
+const MobileNavbar = ({ modalControl }: { modalControl: () => void }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col items-center gap-y-8">
