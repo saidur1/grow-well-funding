@@ -2,7 +2,7 @@ import ContactForm from "@/components/common/contact-form";
 
 const Contact = () => {
   return (
-    <section className="min-h-screen space-y-10 pb-10">
+    <section className="min-h-screen space-y-10 pb-10 pt-[80px]">
       <div
         className=" relative h-[400px] md:h-[320px] bg-no-repeat bg-cover bg-fixed bg-gray-100"
         style={{

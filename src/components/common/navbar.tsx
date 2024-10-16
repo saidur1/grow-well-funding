@@ -3,7 +3,7 @@
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 // Components
 import ApplyButton from "@/components/ui/applyButton";
@@ -16,6 +16,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -40,6 +41,10 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollPosition]);
+
+  const modalControl = useCallback(() => {
+    setOpen((prev) => !prev);
+  }, []);
 
   return (
     <>
@@ -87,47 +92,14 @@ const Navbar = () => {
               </a>
             </div>
             <div className="md:hidden">
-              <Sheet open={open} onOpenChange={setOpen}>
+              <Sheet open={open} onOpenChange={() => modalControl()}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" className="p-1">
                     <Menu className="text-primary-main" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="top" className="bg-white pt-[60px]">
-                  <div className="flex flex-col items-center gap-y-8">
-                    {navLinks.map(({ id, name, href, subLinks }) => (
-                      <HoverCard
-                        key={id}
-                        open={href !== "" ? false : undefined}
-                      >
-                        <HoverCardTrigger>
-                          <Link
-                            href={href}
-                            onClick={() => setOpen(false)}
-                            className={cn(
-                              "text-primary-main hover:text-primary-main/80 transition duration-200",
-                              href === "" && "select-none"
-                            )}
-                          >
-                            {name}
-                          </Link>
-                        </HoverCardTrigger>
-                        <HoverCardContent>
-                          {subLinks?.map(({ href, id, name }) => (
-                            <Link
-                              key={id}
-                              href={href}
-                              onClick={() => setOpen(false)}
-                              className="text-primary-main hover:text-primary-main/80 transition duration-200"
-                            >
-                              {name}
-                            </Link>
-                          ))}
-                        </HoverCardContent>
-                      </HoverCard>
-                    ))}
-                    <ApplyButton />
-                  </div>
+                  <MobileNavbar modalControl={modalControl} />
                 </SheetContent>
               </Sheet>
             </div>
@@ -139,3 +111,75 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const MobileNavbar = ({ modalControl }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="flex flex-col items-center gap-y-8">
+      <Link
+        href="/"
+        onClick={modalControl}
+        className={cn(
+          "text-primary-main hover:text-primary-main/80 transition duration-200"
+        )}
+      >
+        Home
+      </Link>
+      <Link
+        href="/about"
+        onClick={modalControl}
+        className={cn(
+          "text-primary-main hover:text-primary-main/80 transition duration-200"
+        )}
+      >
+        About
+      </Link>
+      <Popover open={open} onOpenChange={() => setOpen(!open)}>
+        <PopoverTrigger>
+          <button
+            onClick={() => setOpen(!open)}
+            className={cn(
+              "text-primary-main hover:text-primary-main/80 transition duration-200"
+            )}
+          >
+            Services
+          </button>
+        </PopoverTrigger>
+        <PopoverContent>
+          <div className="space-y-2 flex flex-col">
+            <Link
+              onClick={() => {
+                setOpen(!open);
+                modalControl();
+              }}
+              href="/equipment-financing"
+              className="text-primary-main hover:text-primary-main/80 transition duration-200"
+            >
+              Equipment Financing
+            </Link>
+            <Link
+              onClick={() => {
+                setOpen(!open);
+                modalControl();
+              }}
+              href="/business-line-of-credit"
+              className="text-primary-main hover:text-primary-main/80 transition duration-200"
+            >
+              Business Line of Credit
+            </Link>
+          </div>
+        </PopoverContent>
+      </Popover>
+      <Link
+        href="/contact"
+        onClick={modalControl}
+        className={cn(
+          "text-primary-main hover:text-primary-main/80 transition duration-200"
+        )}
+      >
+        Contact
+      </Link>
+      <ApplyButton />
+    </div>
+  );
+};

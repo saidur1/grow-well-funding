@@ -9,7 +9,7 @@ import SectionTitle from "@/components/ui/section-title";
 
 const Page = () => {
   return (
-    <section className="min-h-screen pb-[100px]">
+    <section className="min-h-screen pb-[100px] pt-[80px]">
       <div
         className=" relative h-[220px] bg-no-repeat bg-cover bg-fixed bg-gray-100"
         style={{

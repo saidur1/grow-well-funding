@@ -10,7 +10,7 @@ const ContactForm = dynamic(() => import("@/components/common/contact-form"), {
 
 export default function Home() {
   return (
-    <div className="pb-[100px]">
+    <div className="pb-[100px] pt-[80px]">
       <Hero />
       <TextWithAction
         title="Exciting Business

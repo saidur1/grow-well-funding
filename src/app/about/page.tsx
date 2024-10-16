@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <div
-        className=" relative h-[220px] bg-no-repeat bg-cover bg-fixed bg-gray-100"
+        className=" relative h-[220px] bg-no-repeat bg-cover bg-fixed bg-gray-100 mt-[80px]"
         style={{
           backgroundImage:
             "url(https://images.pexels.com/photos/5845710/pexels-photo-5845710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",

@@ -12,10 +12,10 @@ const Hero = () => {
       }}
     >
       <div className="absolute top-1/2  -translate-x-1/2  -translate-y-1/2  left-1/2">
-        <h4 className="text-[22px] text-white font-bold text-center ">
+        <h4 className="text-[22px] text-white font-bold text-center  ">
           Welcome to Growwell Funding
         </h4>
-        <h1 className="text-white text-center text-[46px] md:text-[66px] max-w-[674px] ">
+        <h1 className="text-white text-center text-[40px] md:text-[66px] max-w-[674px] ">
           Get Funding & Expand today
         </h1>
         <div className="flex items-center justify-center gap-x-7 mt-[20px]">
