@@ -7,6 +7,7 @@ interface Props {
   titleClasses?: string;
   descriptionClasses?: string;
   containerClasses?: string;
+  id?: string;
 }
 
 const SectionTitle = ({
@@ -16,9 +17,11 @@ const SectionTitle = ({
   titleClasses,
   descriptionClasses,
   containerClasses,
+  id,
 }: Props) => {
   return (
     <div
+      id={id}
       className={cn(
         "my-[50px] mt-[100px] sectionContainer space-y-2",
         containerClasses

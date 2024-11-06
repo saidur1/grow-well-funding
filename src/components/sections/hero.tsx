@@ -5,10 +5,11 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <div
-      className=" relative h-[80vh] bg-no-repeat bg-cover  bg-fixed bg-gray-200"
+      className=" relative h-[80vh] bg-no-repeat bg-cover mix-blend-darken  bg-fixed bg-black/50"
       style={{
         backgroundImage:
           "url(https://utfs.io/f/0CpqaBXnsrLBE359wKhS2lMG9RtWfUEc4LAKZIy6NokaYnwX)",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute top-1/2  -translate-x-1/2  -translate-y-1/2  left-1/2">
@@ -31,9 +32,13 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className="absolute bottom-12  -translate-x-1/2  -translate-y-1/2  left-1/2 text-white">
+      <Link
+        href="#Start"
+        scroll
+        className="absolute bottom-12  -translate-x-1/2  -translate-y-1/2  left-1/2 text-white/70 hover:text-white cursor-pointer"
+      >
         <CircleChevronDown className="h-10 w-10" />
-      </div>
+      </Link>
     </div>
   );
 };

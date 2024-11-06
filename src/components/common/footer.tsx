@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="flex flex-col gap-y-3">
             <Link
               className="text-white/80 hover:text-white transition duration-300"
-              href="/"
+              href="#home"
             >
               Home
             </Link>
@@ -37,6 +37,18 @@ const Footer = () => {
             >
               About
             </Link>
+            <a
+              href="#services"
+              className="text-white/80 hover:text-white transition duration-300"
+            >
+              Services
+            </a>
+            <a
+              href="#home"
+              className="text-white/80 hover:text-white transition duration-300"
+            >
+              Brokers
+            </a>
             <Link
               className="text-white/80 hover:text-white transition duration-300"
               href="/contact"
