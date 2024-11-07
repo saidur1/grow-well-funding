@@ -63,7 +63,11 @@ const Navbar = () => {
             </div>
             <div className="flex-1 h-full md:flex justify-around items-center hidden">
               {navLinks.map(({ id, name, href, subLinks }) => (
-                <HoverCard key={id} open={href !== "" ? false : undefined}>
+                <HoverCard
+                  key={id}
+                  open={href !== "" ? false : undefined}
+                  openDelay={200}
+                >
                   <HoverCardTrigger>
                     <Link
                       href={href}
