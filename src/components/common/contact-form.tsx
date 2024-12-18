@@ -1,8 +1,13 @@
 "use client";
-import { useToast } from "@/hooks/use-toast";
-import { contactSchema, ContactSchemaType } from "@/schema/schema";
+
+// Packages
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+
+// Local imports
+import { useToast } from "@/hooks/use-toast";
+import { sendLoanApplicationFormEmail } from "@/lib/email/send-loan-application-email";
+import { contactSchema, ContactSchemaType } from "@/schema/schema";
 import { Button } from "../ui/button";
 import {
   Form,
@@ -37,8 +42,9 @@ const ContactForm = () => {
     },
   });
 
-  const handleForm = (data: ContactSchemaType) => {
-    console.log(data);
+  const handleForm = async (data: ContactSchemaType) => {
+    const response = await sendLoanApplicationFormEmail(data);
+    console.log(response);
     toast({
       title: "Your application is submitted successfully",
     });
