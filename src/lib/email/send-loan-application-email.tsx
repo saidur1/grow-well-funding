@@ -1,3 +1,4 @@
+"use server";
 import { ContactSchemaType } from "@/schema/schema";
 import { Resend } from "resend";
 import LoanApplicationEmail from "../../../react-email-starter/emails/loan-application";
@@ -16,7 +17,7 @@ export async function sendLoanApplicationFormEmail({
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: "monirhrabby.mayesa@gmail.com",
-    subject: "TEST",
+    subject: "New Loan Application",
     react: (
       <LoanApplicationEmail
         firstName={firstName}

@@ -1,7 +1,6 @@
 "use client";
 // Packages
 import { Menu } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
@@ -58,7 +57,7 @@ const Navbar = () => {
           <div className="flex items-center w-full justify-between h-full">
             <div className="flex-initial w-[200px]">
               <Link href="/">
-                <Image src="/logo.webp" width={80} height={80} alt="logo" />
+                <img src="/logo.webp" width={80} height={80} alt="logo" />
               </Link>
             </div>
             <div className="flex-1 h-full md:flex justify-around items-center hidden">
