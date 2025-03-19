@@ -34,11 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(questrial.className, "antialiased")}>
-        <NProgress />
-        <Toaster />
-        <Navbar />
+        
         {children}
-        <Footer />
+       
       </body>
     </html>
   );
