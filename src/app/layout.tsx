@@ -1,8 +1,5 @@
-import Footer from "@/components/common/footer";
-import Navbar from "@/components/common/navbar";
-import { Toaster } from "@/components/ui/toaster";
+
 import { cn } from "@/lib/utils";
-import NProgress from "@/provider/NProgress";
 import type { Metadata } from "next";
 import { Nunito, Questrial } from "next/font/google";
 import "./globals.css";
