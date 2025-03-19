@@ -1,12 +1,3 @@
-import Hero from "@/components/sections/hero";
-import TextWithAction from "@/components/sections/text-with-action";
-import InfoCard from "@/components/ui/info-card";
-import SectionTitle from "@/components/ui/section-title";
-import dynamic from "next/dynamic";
-
-const ContactForm = dynamic(() => import("@/components/common/contact-form"), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
